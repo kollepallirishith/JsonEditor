@@ -11,8 +11,7 @@ const sampleButton = document.getElementById('sampleButton');
 const copyButton = document.getElementById('copyButton');
 const downloadButton = document.getElementById('downloadButton');
 const compressButton = document.getElementById('compressButton');
-const expandAllButton = document.getElementById('expandAllButton');
-const collapseAllButton = document.getElementById('collapseAllButton');
+const toggleExpandButton = document.getElementById('toggleExpandButton');
 const searchInput = document.getElementById('searchInput');
 
 const sampleJson = `{
@@ -75,12 +74,16 @@ function toggleCompactView() {
   treeView.setCompactView(isCompactView);
 }
 
-function expandAll() {
-  treeView.expandAll();
-}
-
-function collapseAll() {
-  treeView.collapseAll();
+let allExpanded = true;
+function toggleExpandCollapse() {
+  allExpanded = !allExpanded;
+  if (allExpanded) {
+    treeView.expandAll();
+    toggleExpandButton.textContent = '⇅ Collapse All';
+  } else {
+    treeView.collapseAll();
+    toggleExpandButton.textContent = '↕ Expand All';
+  }
 }
 
 formatButton.addEventListener('click', () => {
@@ -119,8 +122,7 @@ downloadButton.addEventListener('click', () => {
 });
 
 compressButton.addEventListener('click', toggleCompactView);
-expandAllButton.addEventListener('click', expandAll);
-collapseAllButton.addEventListener('click', collapseAll);
+toggleExpandButton.addEventListener('click', toggleExpandCollapse);
 searchInput.addEventListener('input', () => {
   currentSearch = searchInput.value;
   treeView.setSearch(currentSearch);
@@ -130,3 +132,11 @@ editor.addEventListener('input', syncPreview);
 
 editor.value = sampleJson;
 syncPreview();
+
+// Start with the tree expanded so the first user action will collapse it.
+try {
+  treeView.expandAll();
+  toggleExpandButton.textContent = '⇅ Collapse All';
+} catch (e) {
+  // ignore if treeView not ready
+}
