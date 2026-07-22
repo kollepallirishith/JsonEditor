@@ -128,6 +128,12 @@ textarea {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(148, 163, 184, 0.16);
   padding: 0.8rem;
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.preview-meme:hover {
+  transform: translateY(-2px);
+  border-color: rgba(147, 197, 253, 0.45);
 }
 
 .search-row {

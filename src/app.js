@@ -13,6 +13,9 @@ const downloadButton = document.getElementById('downloadButton');
 const compressButton = document.getElementById('compressButton');
 const toggleExpandButton = document.getElementById('toggleExpandButton');
 const searchInput = document.getElementById('searchInput');
+const memeImage = document.getElementById('memeImage');
+const memeCaption = document.getElementById('memeCaption');
+const memeQuote = document.getElementById('memeQuote');
 
 const sampleJson = `{
   "project": "JsonEditor",
@@ -31,6 +34,36 @@ const sampleJson = `{
 const treeView = createTreeViewController(treeContainer);
 let isCompactView = false;
 let currentSearch = '';
+
+const memeEntries = [
+  {
+    src: './images.jfif',
+    caption: 'JSON file mood',
+    quote: 'integrated meme energy — yes, this is the one.'
+  },
+  {
+    src: './images.jfif',
+    caption: 'Brainrot debug',
+    quote: 'the object is valid but the vibes are not.'
+  },
+  {
+    src: './images.jfif',
+    caption: 'Tree view chaos',
+    quote: 'when the schema hits different and the values start flexing.'
+  }
+];
+
+let memeIndex = 0;
+function rotateMeme() {
+  memeIndex = (memeIndex + 1) % memeEntries.length;
+  const entry = memeEntries[memeIndex];
+  memeImage.src = entry.src;
+  memeImage.alt = entry.caption;
+  memeCaption.textContent = entry.caption;
+  memeQuote.textContent = entry.quote;
+}
+
+setInterval(rotateMeme, 60000);
 
 function setStatus(message, isError = false) {
   statusMessage.textContent = message;
