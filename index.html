@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON Studio</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">JSON Studio</p>
+        </div>
+        <div class="hero-actions">
+          <button id="formatButton" type="button">Format</button>
+          <button id="minifyButton" type="button">Minify</button>
+          <button id="compressButton" type="button">Compress</button>
+          <button id="validateButton" type="button">Validate</button>
+          <button id="expandAllButton" type="button">Expand All</button>
+          <button id="collapseAllButton" type="button">Collapse All</button>
+          <button id="sampleButton" type="button">Load Sample</button>
+          <button id="copyButton" type="button">Copy</button>
+          <button id="downloadButton" type="button">Download</button>
+        </div>
+      </header>
+
+      <section class="workspace">
+        <div class="panel editor-panel">
+          <label for="editor">JSON editor</label>
+          <textarea id="editor" spellcheck="false"></textarea>
+        </div>
+
+        <div class="panel preview-panel">
+          <div class="panel-header">
+            <h2>Tree preview</h2>
+            <p id="statusMessage">Ready to edit.</p>
+          </div>
+          <div class="search-row">
+            <input id="searchInput" type="search" placeholder="Search key, value, or string" />
+          </div>
+          <div id="treeContainer" class="tree-container"></div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
