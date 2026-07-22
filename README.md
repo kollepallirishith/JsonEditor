@@ -18,7 +18,7 @@ From the project folder, start a local server:
 python -m http.server 3000
 ```
 
-Then open http://127.0.0.1:3000/ in your browser. If you start the server from the parent directory of the project, use http://127.0.0.1:3000/JsonEditor/ instead.
+Then open http://127.0.0.1:3000/JsonEditor Browser. If you start the server from the parent directory of the project, use http://127.0.0.1:3000/JsonEditor/ instead.
 
 ## Deploy
 
