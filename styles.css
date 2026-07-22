@@ -33,18 +33,23 @@ button:hover {
   background: #2563eb;
 }
 
+button {
+  white-space: nowrap;
+}
+
 .app-shell {
-  max-width: 1400px;
+  width: min(95vw, 1700px);
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem 1.25rem 1.5rem;
 }
 
 .hero {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .eyebrow {
@@ -63,21 +68,24 @@ button:hover {
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.8rem;
+  gap: 0.75rem;
+  margin-left: auto;
+  justify-content: flex-end;
 }
 
 .workspace {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: minmax(0, 1.3fr) minmax(380px, 0.7fr);
   gap: 1rem;
+  align-items: start;
 }
 
 .panel {
-  background: rgba(6, 15, 28, 0.88);
-  padding: 1rem;
+  background: rgba(6, 15, 28, 0.94);
+  padding: 0.95rem;
   border-radius: 1rem;
-  border: 1px solid rgba(148, 163, 184, 0.2);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
 }
 
 .editor-panel {
@@ -88,10 +96,10 @@ button:hover {
 
 textarea {
   flex: 1;
-  min-height: 65vh;
-  border: 1px solid rgba(148, 163, 184, 0.2);
-  border-radius: 0.9rem;
-  padding: 1rem;
+  min-height: calc(100vh - 190px);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 0.85rem;
+  padding: 0.95rem;
   font: 0.95rem/1.5 Consolas, "Courier New", monospace;
   background: #020617;
   color: #f8fafc;
@@ -104,6 +112,22 @@ textarea {
   justify-content: space-between;
   gap: 1rem;
   margin-bottom: 0.75rem;
+}
+
+.preview-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.preview-meme {
+  min-width: 220px;
+  max-width: 260px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  padding: 0.8rem;
 }
 
 .search-row {
@@ -135,7 +159,7 @@ textarea {
 }
 
 .tree-container {
-  min-height: 65vh;
+  min-height: 68vh;
   padding: 0.8rem;
   border-radius: 0.9rem;
   background: rgba(2, 6, 23, 0.74);
@@ -257,19 +281,15 @@ textarea {
   }
 }
 
-.meme-strip {
-  margin-bottom: 1rem;
-}
-
 .meme-card {
   display: inline-flex;
   align-items: center;
-  gap: 1rem;
-  padding: 0.9rem 1rem;
-  border-radius: 1rem;
-  background: rgba(148, 163, 184, 0.08);
-  border: 1px solid rgba(148, 163, 184, 0.16);
-  max-width: 420px;
+  gap: 0.85rem;
+  padding: 0.75rem;
+  border-radius: 0.95rem;
+  background: rgba(148, 163, 184, 0.06);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  width: 100%;
 }
 
 .meme-icon {

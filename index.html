@@ -9,31 +9,21 @@
   <body>
     <main class="app-shell">
       <header class="hero">
-        <div>
+        <div class="hero-brand">
           <p class="eyebrow">JSON Studio</p>
         </div>
         <div class="hero-actions">
-          <button id="formatButton" type="button">Format</button>
-          <button id="minifyButton" type="button">Minify</button>
-          <button id="compressButton" type="button">Compress</button>
-          <button id="validateButton" type="button">Validate</button>
-          <button id="expandAllButton" type="button">Expand All</button>
-          <button id="collapseAllButton" type="button">Collapse All</button>
-          <button id="sampleButton" type="button">Load Sample</button>
-          <button id="copyButton" type="button">Copy</button>
-          <button id="downloadButton" type="button">Download</button>
+          <button id="formatButton" type="button">🪄 Format</button>
+          <button id="minifyButton" type="button">📦 Minify</button>
+          <button id="compressButton" type="button">🧱 Compress</button>
+          <button id="validateButton" type="button">✓ Validate</button>
+          <button id="expandAllButton" type="button">↕ Expand</button>
+          <button id="collapseAllButton" type="button">⇅ Collapse</button>
+          <button id="sampleButton" type="button">⏳ Sample</button>
+          <button id="copyButton" type="button">📋 Copy</button>
+          <button id="downloadButton" type="button">⬇ Download</button>
         </div>
       </header>
-
-      <div class="meme-strip">
-        <div class="meme-card">
-          <img src="./images.jfif" alt="JSON meme" class="meme-icon" />
-          <div>
-            <p class="meme-caption">JSON file mood</p>
-            <p class="meme-note">integrated meme energy — yes, this is the one.</p>
-          </div>
-        </div>
-      </div>
       <section class="workspace">
         <div class="panel editor-panel">
           <label for="editor">JSON editor</label>
@@ -41,9 +31,18 @@
         </div>
 
         <div class="panel preview-panel">
-          <div class="panel-header">
-            <h2>Tree preview</h2>
-            <p id="statusMessage">Ready to edit.</p>
+          <div class="preview-top">
+            <div class="panel-header">
+              <h2>Tree preview</h2>
+              <p id="statusMessage">Ready to edit.</p>
+            </div>
+            <div class="meme-card preview-meme">
+              <img src="./images.jfif" alt="JSON meme" class="meme-icon" />
+              <div>
+                <p class="meme-caption">JSON file mood</p>
+                <p class="meme-note">integrated meme energy — yes, this is the one.</p>
+              </div>
+            </div>
           </div>
           <div class="search-row">
             <input id="searchInput" type="search" placeholder="Search key, value, or string" />
